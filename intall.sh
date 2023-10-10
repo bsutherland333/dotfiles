@@ -11,3 +11,7 @@ ln -s "$HOME/dotfiles/X11" "$HOME/.config"
 
 ## zathura ##
 ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura"
+
+## i3 ##
+rm -rf "$HOME/.config/i3"
+ln -s "$HOME/dotfiles/i3" "$HOME/.config"
