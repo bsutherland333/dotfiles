@@ -1,31 +1,31 @@
 #!/bin/bash
 
 ## nvim ##
-mkdir -p "$HOME/.config/nvim"
-mkdir -p "$HOME/.config/nvim/undo"
-ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim"
+mkdir -p "$XDG_CONFIG_HOME/nvim"
+mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
+ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
 
 ## X11 ##
-rm -rf "$HOME/.config/X11"
-ln -s "$HOME/dotfiles/X11" "$HOME/.config"
+rm -rf "$XDG_CONFIG_HOME/X11"
+ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
 ## zathura ##
-mkdir -p "$HOME/.config/zathura"
-ln -sf "$HOME/dotfiles/zathura/zathurarc" "$HOME/.config/zathura"
+mkdir -p "$XDG_CONFIG_HOME/zathura"
+ln -sf "$DOTFILES/zathura/zathurarc" "$XDG_CONFIG_HOME/zathura"
 
 ## i3 ##
-rm -rf "$HOME/.config/i3"
-ln -s "$HOME/dotfiles/i3" "$HOME/.config"
+rm -rf "$XDG_CONFIG_HOME/i3"
+ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
 
 ## zsh ##
-mkdir -p "$HOME/.config/zsh"
-ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME"
-ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
-ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
-rm -rf "$HOME/.config/zsh/external"
-ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
+mkdir -p "$XDG_CONFIG_HOME/zsh"
+ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
+ln -sf "$DOTFILES/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh"
+ln -sf "$DOTFILES/zsh/aliases" "$XDG_CONFIG_HOME/zsh/aliases"
+rm -rf "$XDG_CONFIG_HOME/zsh/external"
+ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 
 ## GTK ##
-mkdir -p "$HOME/.config/gtk-3.0"
-ln -sf "$HOME/dotfiles/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0"
+mkdir -p "$XDG_CONFIG_HOME/gtk-3.0"
+ln -sf "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0"
 
