@@ -54,6 +54,18 @@ source ~/dotfiles/zsh/external/bd.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
+## Search with up/down ##
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+bindkey "^K" up-line-or-beginning-search # Up
+bindkey "^J" down-line-or-beginning-search # Down
+
+
 ## fzf (Fuzzy Finder) ##
 
 if [ $(command -v "fzf") ]; then
