@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
+source "$HOME/dotfiles/zsh/.zshenv"
 
 ## nvim ##
 mkdir -p "$XDG_CONFIG_HOME/nvim"
