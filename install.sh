@@ -24,3 +24,8 @@ ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
 ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
 rm -rf "$HOME/.config/zsh/external"
 ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
+
+## GTK ##
+mkdir -p "$HOME/.config/gtk-3.0"
+ln -sf "$HOME/dotfiles/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0"
+
