@@ -40,7 +40,7 @@
 *.cursorColor: #444444
 
 ! Set the font
-URxvt*font: xft:DejaVuSansMono:size=9:antialias=true
+URxvt*font: xft:Inconsolata Nerd Font Mono:size=13:antialias=true
 URxvt*letterSpace: -1
 
 ! Set the border 
