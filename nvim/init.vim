@@ -13,8 +13,15 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'simeji/winresizer'
     " Main theme
     Plug 'NLKNguyen/papercolor-theme'
-    " Status bar plugin
+    " Status bar
     Plug 'itchyny/lightline.vim'
+    " LSP stuff
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    " Snippets
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'L3MON4D3/LuaSnip'
 call plug#end()
 
 " Configure csv.vim
@@ -57,7 +64,7 @@ set background=dark
 colorscheme PaperColor
 
 " Save when window focus is lost
-:au FocusLost * :wa
+":au FocusLost * :wa
 
 " Show whitespace
 set list
@@ -70,3 +77,6 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ }
+
+" Source lua setup file (must be at end of file)
+lua require('init')

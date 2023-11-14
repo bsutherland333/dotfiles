@@ -5,6 +5,8 @@ source "$HOME/dotfiles/zsh/.zshenv"
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 mkdir -p "$XDG_CONFIG_HOME/nvim/undo"
 ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
+mkdir -p "$XDG_CONFIG_HOME/nvim/lua"
+ln -sf "$DOTFILES/nvim/lua/init.lua" "$XDG_CONFIG_HOME/nvim/lua/init.lua"
 
 ## vim-plug ##
 [ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
