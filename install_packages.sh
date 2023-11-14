@@ -36,6 +36,11 @@ detect_distribution
 case $DISTRIBUTION in
     ubuntu)
         echo "Detected Ubuntu. Installing packages using apt-get."
+        # Add any ppa repos required
+        sudo apt-get update
+        sudo apt-get install software-properties-common -y
+        sudo add-apt-repository ppa:neovim-ppa/stable -y
+
         packages=(
             "man-db"
             "neovim"
