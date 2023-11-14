@@ -52,7 +52,9 @@ case $DISTRIBUTION in
             "ripgrep"
             #"diff-so-fancy"
             "clangd"
+            "clang"
             #"pyright"
+            "less"
         )
         install_ubuntu_packages "${packages[@]}"
         ;;
@@ -71,6 +73,7 @@ case $DISTRIBUTION in
             "diff-so-fancy"
             "clang"
             "pyright"
+            "less"
         )
         install_arch_packages "${packages[@]}"
         ;;
