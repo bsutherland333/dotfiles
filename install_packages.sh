@@ -51,7 +51,7 @@ case $DISTRIBUTION in
             "fzf"
             "ripgrep"
             #"diff-so-fancy"
-            "clang"
+            "clangd"
             #"pyright"
         )
         install_ubuntu_packages "${packages[@]}"
