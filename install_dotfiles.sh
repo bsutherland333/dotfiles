@@ -1,4 +1,7 @@
 #!/bin/zsh
+
+echo "Installing dotfiles and nvim plugins."
+
 source "$HOME/dotfiles/zsh/.zshenv"
 
 ## nvim ##
