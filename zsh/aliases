@@ -1,4 +1,5 @@
 alias dc='docker compose'
+alias de_rosflight='cd ~/projects/docker-project-files/rosflight_ws && dc exec rosflight'
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
