@@ -5,6 +5,14 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 fpath=($ZDOTDIR/external $fpath)
 
 
+## Auto-start i3 ##
+
+if [ "$(tty)" = "/dev/tty1" ];
+then
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+fi
+
+
 ## Vi Mode ##
 
 bindkey -v
@@ -71,7 +79,7 @@ fi
 
 ## Syntax Highlighting ##
 
-# Needs to be sourced after everything (so it knows it's syntax)
+# Needs to be sourced after everything (so it knows all the syntax)
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 
@@ -87,14 +95,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-
-## Auto-start i3 ##
-
-if [ "$(tty)" = "/dev/tty1" ];
-then
-    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
-fi
 
 
 ## Hacks ##
