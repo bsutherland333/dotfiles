@@ -26,7 +26,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 function zvm_after_lazy_keybindings() {
-    # Custom keybindings must be delcared inside this function when using zsh-vi-mode
+    # Custom keybindings must be delcared inside this function when using zsh-vi-mode plugin
     zvm_bindkey vicmd "^[[A" up-line-or-beginning-search # Up
     zvm_bindkey vicmd "^[[B" down-line-or-beginning-search # Down
     zvm_bindkey vicmd "^K" up-line-or-beginning-search # Up
@@ -42,7 +42,14 @@ autoload -Uz prompt_purification_setup; prompt_purification_setup
 
 ## Auto-complete ##
 
-# Initialize auto-complete
+# Disable vi keys to enable autocomplete navigation with them
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Initialize auto-complete (must be called after hjkl bindkey lines)
 autoload -U compinit; compinit
 
 # Autocomplete hidden files
