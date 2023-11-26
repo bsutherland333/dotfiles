@@ -1,6 +1,7 @@
 ### Zsh Configuration ###
 
-source "$XDG_CONFIG_HOME/zsh/aliases"
+source $XDG_CONFIG_HOME/zsh/aliases
+source /usr/share/zsh/scripts/zplug/init.zsh
 fpath=($ZDOTDIR/external $fpath)
 
 
@@ -30,7 +31,7 @@ autoload -U compinit; compinit  # must be called after hjkl bindkey commands
 
 # Autocomplete hidden files
 _comp_options+=(globdots)
-source ~/dotfiles/zsh/external/completion.zsh
+source $DOTFILES/zsh/external/completion.zsh
 
 
 ## Directory stack ##
@@ -45,13 +46,7 @@ setopt PUSHD_SILENT
 
 ## Backwards directory command (bd) ##
 
-source ~/dotfiles/zsh/external/bd.zsh
-
-
-## Syntax Highlighting ##
-
-# Needs to be sourced after everything (so it knows it's syntax)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $DOTFILES/zsh/external/bd.zsh
 
 
 ## Search with up/down ##
@@ -74,6 +69,26 @@ if [ $(command -v "fzf") ]; then
 fi
 
 
+## Syntax Highlighting ##
+
+# Needs to be sourced after everything (so it knows it's syntax)
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+
+## Load plugins ##
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
+
 ## Auto-start i3 ##
 
 if [ "$(tty)" = "/dev/tty1" ];
@@ -86,5 +101,3 @@ fi
 
 # Remove extra space when started
 clear
-
-

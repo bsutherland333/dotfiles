@@ -46,8 +46,6 @@ case $DISTRIBUTION in
             "neovim"
             "git"
             "zsh"
-            #"zsh-completions"
-            "zsh-syntax-highlighting"
             "fzf"
             "ripgrep"
             #"diff-so-fancy"
@@ -55,6 +53,7 @@ case $DISTRIBUTION in
             "clang"
             #"pyright"
             "less"
+            "zplug"
         )
         install_ubuntu_packages "${packages[@]}"
         ;;
@@ -66,14 +65,13 @@ case $DISTRIBUTION in
             "neovim"
             "git"
             "zsh"
-            "zsh-completions"
-            "zsh-syntax-highlighting"
             "fzf"
             "ripgrep"
             "diff-so-fancy"
             "clang"
             "pyright"
             "less"
+            #"zplug"  # On AUR, setup yay first
         )
         install_arch_packages "${packages[@]}"
         ;;
