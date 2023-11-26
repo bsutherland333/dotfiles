@@ -15,15 +15,23 @@ fi
 
 ## Vi Mode ##
 
-bindkey -v
-export KEYTIMEOUT=1
-autoload -Uz cursor_mode && cursor_mode
+zplug "jeffreytse/zsh-vi-mode"
 
-zmodload zsh/complist
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+
+## Search with up/down ##
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+function zvm_after_lazy_keybindings() {
+    # Custom keybindings must be delcared inside this function when using zsh-vi-mode
+    zvm_bindkey vicmd "^[[A" up-line-or-beginning-search # Up
+    zvm_bindkey vicmd "^[[B" down-line-or-beginning-search # Down
+    zvm_bindkey vicmd "^K" up-line-or-beginning-search # Up
+    zvm_bindkey vicmd "^J" down-line-or-beginning-search # Down
+}
 
 
 ## Prompt ##
@@ -35,7 +43,7 @@ autoload -Uz prompt_purification_setup; prompt_purification_setup
 ## Auto-complete ##
 
 # Initialize auto-complete
-autoload -U compinit; compinit  # must be called after hjkl bindkey commands
+autoload -U compinit; compinit
 
 # Autocomplete hidden files
 _comp_options+=(globdots)
@@ -55,18 +63,6 @@ setopt PUSHD_SILENT
 ## Backwards directory command (bd) ##
 
 source $DOTFILES/zsh/external/bd.zsh
-
-
-## Search with up/down ##
-
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
-bindkey "^K" up-line-or-beginning-search # Up
-bindkey "^J" down-line-or-beginning-search # Down
 
 
 ## fzf (Fuzzy Finder) ##
