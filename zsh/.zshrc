@@ -27,10 +27,10 @@ zle -N down-line-or-beginning-search
 
 function zvm_after_lazy_keybindings() {
     # Custom keybindings must be delcared inside this function when using zsh-vi-mode plugin
-    zvm_bindkey vicmd "^[[A" up-line-or-beginning-search # Up
-    zvm_bindkey vicmd "^[[B" down-line-or-beginning-search # Down
-    zvm_bindkey vicmd "^K" up-line-or-beginning-search # Up
-    zvm_bindkey vicmd "^J" down-line-or-beginning-search # Down
+    zvm_bindkey vicmd '^[[A' up-line-or-beginning-search # Up
+    zvm_bindkey vicmd '^[[B' down-line-or-beginning-search # Down
+    zvm_bindkey vicmd 'k' up-line-or-beginning-search # Up
+    zvm_bindkey vicmd 'j' down-line-or-beginning-search # Down
 }
 
 
