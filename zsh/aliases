@@ -1,5 +1,8 @@
 alias dc='docker compose'
-alias de_rosflight='cd ~/projects/docker-project-files/rosflight_ws && dc exec rosflight'
+alias de-rosflight='cd ~/projects/docker-project-files/rosflight_ws && dc exec rosflight'
+alias gd-sync='rclone bisync remote:/ ~/google-drive --drive-acknowledge-abuse --verbose --filters-file ~/.config/rclone/remote_sync_filter.txt --check-access'
+alias zsh-reload='fc -R && source ${ZDOTDIR}/.zshrc'
 
+# directory history alias
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index

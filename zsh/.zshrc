@@ -33,6 +33,9 @@ function zvm_after_lazy_keybindings() {
     zvm_bindkey vicmd 'j' down-line-or-beginning-search # Down
 }
 
+# Set history to be written after every command, rather than on terminal close
+setopt INC_APPEND_HISTORY
+
 
 ## Prompt ##
 
