@@ -22,6 +22,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     " Snippets
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'L3MON4D3/LuaSnip'
+    " Git
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Configure csv.vim
@@ -54,7 +56,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " Keep cursor away from edges
-set scrolloff=4
+set scrolloff=5
 
 " Highlight current line
 set cursorline
@@ -77,6 +79,9 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ }
+
+" Setup parameters for git plugins
+set updatetime=100
 
 " Source lua setup file (must be at end of file)
 lua require('init')
