@@ -1,5 +1,16 @@
 ## Sets Zsh enviromnent variables ##
 
+# Detect current distribution
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    DISTRIBUTION=$ID
+elif [ -f /etc/lsb-release ]; then
+    . /etc/lsb-release
+    DISTRIBUTION=$DISTRIB_ID
+else
+    DISTRIBUTION="unknown"
+fi
+
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -31,4 +42,11 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Set location of zplug installation, for sourcing startup scripts
-export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
+case $DISTRIBUTION in
+    ubuntu)
+        export ZPLUG_ROOT="/usr/share/zplug"
+        ;;
+    arch)
+        export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
+        ;;
+esac

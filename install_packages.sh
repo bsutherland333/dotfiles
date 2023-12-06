@@ -7,7 +7,7 @@ command_exists() {
 
 ## Main script
 
-# Detect distro
+# Detect current distribution
 if [ -f /etc/os-release ]; then
     . /etc/os-release
     DISTRIBUTION=$ID
