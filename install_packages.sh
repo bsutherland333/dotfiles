@@ -35,12 +35,12 @@ case $DISTRIBUTION in
             zsh \
             fzf \
             ripgrep \
-            #diff-so-fancy \
             clangd \
             clang \
             less \
             zplug \
             -y
+        # diff-so-fancy
 
         # Install pip packages
         sudo apt-get install python3-pip -y
