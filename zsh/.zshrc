@@ -1,7 +1,7 @@
 ### Zsh Configuration ###
 
 source $XDG_CONFIG_HOME/zsh/aliases
-source /usr/share/zsh/scripts/zplug/init.zsh
+source $ZPLUG_ROOT/init.zsh
 fpath=($ZDOTDIR/external $fpath)
 
 

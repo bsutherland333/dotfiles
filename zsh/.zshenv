@@ -30,3 +30,5 @@ export DOTFILES="$HOME/dotfiles"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# Set location of zplug installation, for sourcing startup scripts
+export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
