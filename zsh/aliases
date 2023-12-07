@@ -1,7 +1,7 @@
 alias dc='docker compose'
 alias de-rosflight='cd ~/projects/docker-project-files/rosflight_ws && dc exec rosflight'
 alias gd-sync='rclone bisync remote:/ ~/google_drive --drive-acknowledge-abuse --verbose --filters-file ~/.config/rclone/remote_sync_filter.txt --check-access'
-alias zsh-reload='fc -R && source ${ZDOTDIR}/.zshenv && source ${ZDOTDIR}/.zshrc'
+alias zsh-reload='fc -R && source ${HOME}/.zshenv && source ${ZDOTDIR}/.zshrc'
 
 # directory history alias
 alias d='dirs -v'

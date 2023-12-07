@@ -39,6 +39,7 @@ case $DISTRIBUTION in
             clang \
             less \
             zplug \
+            tree \
             -y
         # diff-so-fancy
 
@@ -61,7 +62,8 @@ case $DISTRIBUTION in
             diff-so-fancy \
             clang \
             pyright \
-            less
+            less \
+            tree
             #zplug  # On AUR, setup yay first
         ;;
     *)
