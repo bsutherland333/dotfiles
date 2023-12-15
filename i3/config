@@ -253,4 +253,8 @@ bindsym Print exec --no-startup-id maim "$HOME/pictures/$(date).png"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "$HOME/pictures/$(date).png"
 bindsym Shift+Print exec --no-startup-id maim --select "$HOME/pictures/$(date).png"
 
-exec pinentry-gnome3
+## Enable media controls ##
+
+bindsym $mod+P exec playerctl play-pause
+bindsym $mod+bracketright exec playerctl next
+bindsym $mod+bracketleft exec playerctl previous
