@@ -10,10 +10,7 @@ urxvtd -o -q -f
 udiskie &
 
 ## Remap caps lock to esc
-setxkbmap -option caps:escape
-
-## Disable screen timeout
-xset s off -dpms
+setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape'&
 
 ## Start i3 (needs to be at end of file)
 exec i3
