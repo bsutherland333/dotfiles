@@ -15,13 +15,6 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'NLKNguyen/papercolor-theme'
     " Status bar
     Plug 'itchyny/lightline.vim'
-    " LSP stuff
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    " Snippets
-    Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'L3MON4D3/LuaSnip'
     " Git
     Plug 'airblade/vim-gitgutter'
 call plug#end()
@@ -83,5 +76,3 @@ let g:lightline = {
 " Setup parameters for git plugins
 set updatetime=100
 
-" Source lua setup file (must be at end of file)
-lua require('init')
