@@ -4,9 +4,6 @@
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     " CSV formatting
     Plug 'chrisbra/csv.vim'
-    " fuzzy finder
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
     " Undo tree
     Plug 'simnalamburt/vim-mundo'
     " Window resizor
@@ -17,6 +14,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'itchyny/lightline.vim'
     " Git
     Plug 'airblade/vim-gitgutter'
+    " Github Copilot
+    Plug 'github/copilot.vim'
 call plug#end()
 
 " Configure csv.vim
@@ -76,3 +75,5 @@ let g:lightline = {
 " Setup parameters for git plugins
 set updatetime=100
 
+" Source lua setup file (must be at end of file)
+lua require('init')
