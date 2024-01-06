@@ -34,12 +34,18 @@ case $DISTRIBUTION in
             git \
             zsh \
             fzf \
-            grep \
+            ripgrep \
+            clangd \
+            clang \
             less \
             zplug \
             tree \
             -y
         # diff-so-fancy
+
+        # Install pip packages
+        sudo apt-get install python3-pip -y
+        pip3 install pyright
         ;;
     arch)
         echo "Detected Arch Linux. Installing packages using pacman."
@@ -52,8 +58,10 @@ case $DISTRIBUTION in
             git \
             zsh \
             fzf \
-            grep \
+            ripgrep \
             diff-so-fancy \
+            clang \
+            pyright \
             less \
             tree
             #zplug  # On AUR, setup yay first

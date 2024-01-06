@@ -12,6 +12,13 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'NLKNguyen/papercolor-theme'
     " Status bar
     Plug 'itchyny/lightline.vim'
+    " LSP stuff
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    " Snippets
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'L3MON4D3/LuaSnip'
     " Git
     Plug 'airblade/vim-gitgutter'
     " Github Copilot
