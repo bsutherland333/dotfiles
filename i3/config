@@ -218,11 +218,6 @@ for_window [instance="htop_scratchpad"] move to scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
 exec urxvtc -name htop_scratchpad -e htop
 
-# bmon scratchpad
-for_window [instance="bmon_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+n [instance="bmon_scratchpad"] scratchpad show
-exec urxvtc -name bmon_scratchpad -e bmon
-
 # Web browser
 bindsym $mod+b exec qutebrowser
 
