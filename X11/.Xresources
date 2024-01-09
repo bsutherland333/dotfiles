@@ -1,43 +1,42 @@
 !!! URxvt Configuration !!!
 
-!! Pre-defined colors !!
-! black 236 238
-*.color0: #303030
-*.color8: #444444
+!! configure colors with terminal.sexy !!
+! special
+*.foreground:   #c6c6c6
+*.background:   #1c1c1c
+*.cursorColor:  #c6c6c6
 
-! red 167
-*.color1: #d75f5f
-*.color9: #d75f5f
+! black
+*.color0:       #303030
+*.color8:       #444444
 
-! green 108
-*.color2: #87AF87
-*.color10: #87AF87
+! red
+*.color1:       #da4a4a
+*.color9:       #da4a4a
 
-! yellow 221
-*.color3: #ffd75f
-*.color11: #ffd75f
+! green
+*.color2:       #71b471
+*.color10:      #71b471
 
-! blue 110
-*.color4: #87afd7
-*.color12: #87afd7
+! yellow
+*.color3:       #ffd044
+*.color11:      #ffd044
 
-! magenta 146
-*.color5: #afafd7
-*.color13: #afafd7
+! blue
+*.color4:       #87afd7
+*.color12:      #87afd7
 
-! cyan 75
-*.color6: #afd7ff
-*.color14: #afd7ff
+! magenta
+*.color5:       #afafd7
+*.color13:      #afafd7
 
-! white 239 15
-*.color7: #e4e4e4
-*.color15: #ffffff
+! cyan
+*.color6:       #afd7ff
+*.color14:      #afd7ff
 
-
-! Set the colors
-*.foreground: #C6C6C6 
-*.background: #1C1C1C 
-*.cursorColor: #444444
+! white
+*.color7:       #e4e4e4
+*.color15:      #ffffff
 
 ! Set the font
 URxvt*font: xft:Inconsolata Nerd Font Mono:size=13:antialias=true
