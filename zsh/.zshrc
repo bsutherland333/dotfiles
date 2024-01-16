@@ -102,8 +102,3 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-
-## Hacks ##
-
-# Remove extra space when started
-clear

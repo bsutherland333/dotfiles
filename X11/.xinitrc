@@ -3,9 +3,6 @@
 ## Add configuration files to i3 config
 xrdb -merge ~/.config/X11/.Xresources
 
-## Start URxvt as a daemon
-urxvtd -o -q -f
-
 ## Start udiskie
 udiskie &
 

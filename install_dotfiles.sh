@@ -25,6 +25,14 @@ nvim --noplugin +PlugUpdate +qa
 rm -rf "$XDG_CONFIG_HOME/X11"
 ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
 
+## alacritty ##
+mkdir -p "$XDG_CONFIG_HOME/alacritty"
+ln -sf "$DOTFILES/alacritty/alacritty.toml" "$XDG_CONFIG_HOME/alacritty"
+if [ ! -d "$XDG_CONFIG_HOME/alacritty/themes" ]; then
+    mkdir "$XDG_CONFIG_HOME/alacritty/themes"
+    git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME/alacritty/themes"
+fi
+
 ## zathura ##
 mkdir -p "$XDG_CONFIG_HOME/zathura"
 ln -sf "$DOTFILES/zathura/zathurarc" "$XDG_CONFIG_HOME/zathura"
