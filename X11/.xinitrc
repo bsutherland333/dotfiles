@@ -1,7 +1,7 @@
 ### X11 configuration ###
 
 ## Add configuration files to i3 config
-xrdb -merge ~/.config/X11/.Xresources
+xrdb -merge $XDG_CONFIG_HOME/X11/.Xresources
 
 ## Start udiskie
 udiskie &
