@@ -3,22 +3,22 @@ import = [
 ]
 
 [font]
-size = 8.5
+size = 7
 
 [font.bold]
-family = "Inconsolata Nerd Font"
+family = "monospace"
 style = "Bold"
 
 [font.bold_italic]
-family = "Inconsolata Nerd Font"
+family = "monospace"
 style = "Bold Italic"
 
 [font.italic]
-family = "Inconsolata Nerd Font"
+family = "monospace"
 style = "Italic"
 
 [font.normal]
-family = "Inconsolata Nerd Font"
+family = "monospace"
 style = "Regular"
 
 [keyboard]
@@ -28,7 +28,7 @@ bindings = [
 ]
 
 [window]
-padding = {x = 2, y = 0}
+padding = {x = 3, y = 0}
 
 [selection]
 save_to_clipboard = true
