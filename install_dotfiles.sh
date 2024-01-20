@@ -21,13 +21,9 @@ ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.v
 
 nvim --noplugin +PlugUpdate +qa
 
-## alacritty ##
-mkdir -p "$XDG_CONFIG_HOME/alacritty"
-ln -sf "$DOTFILES/alacritty/alacritty.toml" "$XDG_CONFIG_HOME/alacritty"
-if [ ! -d "$XDG_CONFIG_HOME/alacritty/themes" ]; then
-    mkdir "$XDG_CONFIG_HOME/alacritty/themes"
-    git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME/alacritty/themes"
-fi
+## foot ##
+mkdir -p "$XDG_CONFIG_HOME/foot"
+ln -sf "$DOTFILES/foot/foot.ini" "$XDG_CONFIG_HOME/foot"
 
 ## zathura ##
 mkdir -p "$XDG_CONFIG_HOME/zathura"
