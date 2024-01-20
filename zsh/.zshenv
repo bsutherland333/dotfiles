@@ -50,6 +50,3 @@ case $DISTRIBUTION in
         export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
         ;;
 esac
-
-# Add qutebrowser scripts to path
-export PATH="/usr/share/qutebrowser/scripts/path:$PATH"
