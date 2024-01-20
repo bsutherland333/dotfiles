@@ -21,10 +21,6 @@ ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.v
 
 nvim --noplugin +PlugUpdate +qa
 
-## X11 ##
-rm -rf "$XDG_CONFIG_HOME/X11"
-ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME"
-
 ## alacritty ##
 mkdir -p "$XDG_CONFIG_HOME/alacritty"
 ln -sf "$DOTFILES/alacritty/alacritty.toml" "$XDG_CONFIG_HOME/alacritty"
@@ -37,9 +33,9 @@ fi
 mkdir -p "$XDG_CONFIG_HOME/zathura"
 ln -sf "$DOTFILES/zathura/zathurarc" "$XDG_CONFIG_HOME/zathura"
 
-## i3 ##
-rm -rf "$XDG_CONFIG_HOME/i3"
-ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME"
+## sway ##
+rm -rf "$XDG_CONFIG_HOME/sway"
+ln -s "$DOTFILES/sway" "$XDG_CONFIG_HOME"
 
 ## zsh ##
 mkdir -p "$XDG_CONFIG_HOME/zsh"
