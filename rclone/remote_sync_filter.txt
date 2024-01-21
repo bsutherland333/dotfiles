@@ -1,0 +1,5 @@
+# Ignore google docs files (rclone was struggling with virtual files)
+- *.docx
+- *.xlsx
+- *.pptx
+- *.svg

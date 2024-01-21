@@ -45,3 +45,7 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 mkdir -p "$XDG_CONFIG_HOME/gtk-3.0"
 ln -sf "$DOTFILES/gtk-3.0/settings.ini" "$XDG_CONFIG_HOME/gtk-3.0"
 
+## rclone ##
+mkdir -p "$XDG_CONFIG_HOME/rclone"
+ln -sf "$DOTFILES/rclone/remote_sync_filter.txt" "$XDG_CONFIG_HOME/rclone"
+
