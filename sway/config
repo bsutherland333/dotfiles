@@ -4,20 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Auto-start applications
-exec udiskie
-
-### Appearance
-font monospace 12
-
-### Behavior
-# Enable toggling to previousw workspace when switching to current
-workspace_auto_back_and_forth yes
-# Disable auto focus on mouse over
-focus_follows_mouse no
-# Set certain windows to default to floating windows
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
 
 ### Variables
 #
@@ -30,14 +16,31 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term foot
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu wofi --show=drun
 # Lockscreen color
 set $lockcolor 505050
 # Web browser
 set $browser qutebrowser
+# Font
+set $font monospace
+# Text size
+set $textsize 12
+# Set menu
+set $menu wofi --show=drun
+
+### Auto-start applications
+exec udiskie
+
+### Appearance
+font $font $textsize
+
+### Behavior
+# Enable toggling to previousw workspace when switching to current
+workspace_auto_back_and_forth yes
+# Disable auto focus on mouse over
+focus_follows_mouse no
+# Set certain windows to default to floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 
 ### Output configuration
 #
@@ -70,14 +73,14 @@ exec swayidle -w \
 
 # Shutdown, Restart, Suspend:
 set $mode_system \
-System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
+System (l) lock, (e) logout, (Ctrl+s) suspend, (h) hibernate, (r) reboot, (s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id swaylock -c $lockcolor, mode "default"
     bindsym e exec --no-startup-id swaymsg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym Ctrl+s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # to close the menu: Enter or Escape
     bindsym Return mode "default"
