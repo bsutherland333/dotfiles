@@ -50,3 +50,7 @@ case $DISTRIBUTION in
         export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
         ;;
 esac
+
+# Specify drivers for video hardware acceleration
+export VDPAU_DRIVER=radeonsi
+export LIBVA_DRIVER_NAME=radeonsi
