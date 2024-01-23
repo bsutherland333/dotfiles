@@ -10,5 +10,3 @@ alias dc-byu-mars-rover='cd ~/projects/BYU-Mars-Rover && dc exec byu_mars_rover 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-# alias for launching stm32cubeprogrammer
-alias STM32CubeProgrammer='/home/brandon/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32CubeProgrammerLauncher'
