@@ -4,7 +4,7 @@ alias zsh-reload='fc -R && source ${HOME}/.zshenv && source ${ZDOTDIR}/.zshrc'
 
 # aliases for entering docker environment
 alias dc-rosflight='cd ~/projects/docker_project_files/rosflight_ws && dc exec rosflight zsh'
-alias dc-byu-mars-rover='cd ~/projects/BYU-Mars-Rover && dc exec byu_mars_rover bash'
+alias dc-rover='cd ~/projects/docker_project_files/BYU-Mars-Rover && dc exec byu_mars_rover bash'
 
 # directory history alias
 alias d='dirs -v'
@@ -13,4 +13,7 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # bluetooth aliases
 alias blueon='bluetoothctl power on'
 alias blueoff='bluetoothctl power off'
-alias blueconhead='bluetoothctl connect 78:2B:64:A2:F2:B2'
+alias blueconphones='bluetoothctl connect 78:2B:64:A2:F2:B2'
+
+# framework utility aliases
+alias chargelim='sudo framework_tool --driver portio --charge-limit'
