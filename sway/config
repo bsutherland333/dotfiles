@@ -148,6 +148,10 @@ input type:touchpad {
 
     # Screenshots
     bindsym Print exec --no-startup-id grim "$HOME/pictures/$(date).png"
+    bindsym $mod+Print exec --no-startup-id swaymsg -t get_tree | jq -r \
+        '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' \
+        | grim -g - "$HOME/pictures/$(date).png"
+    bindsym Shift+Print exec --no-startup-id slurp | grim -g - "$HOME/pictures/$(date).png"
 
 #
 # Moving around:
