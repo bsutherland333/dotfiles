@@ -75,12 +75,12 @@ exec swayidle -w \
 set $mode_system \
 System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
-    bindsym l exec --no-startup-id swaylock -c $lockcolor, mode "default"
-    bindsym e exec --no-startup-id swaymsg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym l exec swaylock -c $lockcolor, mode "default"
+    bindsym e exec swaymsg exit, mode "default"
+    bindsym s exec systemctl suspend, mode "default"
+    bindsym h exec systemctl hibernate, mode "default"
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym p exec systemctl poweroff -i, mode "default"
 
     # to close the menu: Enter or Escape
     bindsym Return mode "default"
@@ -147,11 +147,11 @@ input type:touchpad {
     bindsym XF86AudioPrev exec playerctl previous
 
     # Screenshots
-    bindsym Print exec --no-startup-id grim "$HOME/pictures/$(date).png"
-    bindsym $mod+Print exec --no-startup-id swaymsg -t get_tree | jq -r \
+    bindsym Print exec grim "$HOME/pictures/$(date).png"
+    bindsym $mod+Print exec swaymsg -t get_tree | jq -r \
         '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' \
         | grim -g - "$HOME/pictures/$(date).png"
-    bindsym Shift+Print exec --no-startup-id slurp | grim -g - "$HOME/pictures/$(date).png"
+    bindsym Shift+Print exec slurp | grim -g - "$HOME/pictures/$(date).png"
 
 #
 # Moving around:
@@ -247,13 +247,13 @@ input type:touchpad {
     for_window [instance="sway-scratchpad*"] move scratchpad
 
     # Terminal scratchpad
-    exec --no-startup-id alacritty --class sway-scratchpad1
-    bindsym $mod+Shift+t exec --no-startup-id $sway_scripts/scratchpad_script.sh \
+    exec alacritty --class sway-scratchpad1
+    bindsym $mod+Shift+t exec $sway_scripts/scratchpad_script.sh \
     "sway-scratchpad1" "alacritty --class sway-scratchpad1"
 
     # htop scratchpad
-    exec --no-startup-id alacritty --class sway-scratchpad2 -e htop
-    bindsym $mod+Shift+p exec --no-startup-id $sway_scripts/scratchpad_script.sh \
+    exec alacritty --class sway-scratchpad2 -e htop
+    bindsym $mod+Shift+p exec $sway_scripts/scratchpad_script.sh \
     "sway-scratchpad2" "alacritty --class sway-scratchpad2 -e htop"
 
 #
