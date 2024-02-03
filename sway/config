@@ -250,6 +250,10 @@ input type:touchpad {
     for_window [app_id="htop_scratchpad"] move scratchpad
     bindsym $mod+p exec swaymsg [app_id="htop_scratchpad"] scratchpad show || $(exec $term --app-id=htop_scratchpad -e htop & sleep 0.1 && swaymsg [app_id="htop_scratchpad"] scratchpad show)
 
+    # bitwarden scratchpad
+    for_window [instance="bitwarden"] move scratchpad
+    bindsym $mod+u exec swaymsg [instance="bitwarden"] scratchpad show || exec bitwarden-desktop
+
 #
 # Resizing containers:
 #
