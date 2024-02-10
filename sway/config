@@ -16,8 +16,6 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term foot
-# Lockscreen color
-set $lockcolor 505050
 # Web browser
 set $browser qutebrowser
 # Font
@@ -42,6 +40,8 @@ focus_follows_mouse no
 # Set certain windows to default to floating windows
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+# Matplotlib figures
+for_window [title="Figure *"] floating enable
 
 ### Output configuration
 #
@@ -69,13 +69,13 @@ output eDP-1 scale 1
 exec swayidle -w \
     timeout 1800 'systemctl suspend' \
     resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c $lockcolor'
+    before-sleep 'swaylock -f -i $XDG_CONFIG_HOME/sway/blurred_background.png'
 
 # Shutdown, Restart, Suspend:
 set $mode_system \
 System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
-    bindsym l exec swaylock -c $lockcolor, mode "default"
+    bindsym l exec swaylock -i $XDG_CONFIG_HOME/sway/blurred_background.png, mode "default"
     bindsym e exec swaymsg exit, mode "default"
     bindsym s exec systemctl suspend, mode "default"
     bindsym h exec systemctl hibernate, mode "default"
@@ -249,6 +249,10 @@ input type:touchpad {
     # htop scratchpad
     for_window [app_id="htop_scratchpad"] move scratchpad
     bindsym $mod+p exec swaymsg [app_id="htop_scratchpad"] scratchpad show || $(exec $term --app-id=htop_scratchpad -e htop & sleep 0.1 && swaymsg [app_id="htop_scratchpad"] scratchpad show)
+
+    # amdgpu_top scratchpad
+    for_window [app_id="amdgpu_top_scratchpad"] move scratchpad
+    bindsym $mod+Shift+p exec swaymsg [app_id="amdgpu_top_scratchpad"] scratchpad show || $(exec $term --app-id=amdgpu_top_scratchpad -e amdgpu_top & sleep 0.1 && swaymsg [app_id="amdgpu_top_scratchpad"] scratchpad show)
 
     # bitwarden scratchpad
     for_window [instance="bitwarden"] move scratchpad
