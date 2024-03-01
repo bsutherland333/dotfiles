@@ -23,6 +23,10 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'airblade/vim-gitgutter'
     " Github Copilot
     Plug 'github/copilot.vim'
+    " Debugger
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'rcarriga/nvim-dap-ui'
+    Plug 'mfussenegger/nvim-dap-python'
 call plug#end()
 
 " Configure csv.vim
