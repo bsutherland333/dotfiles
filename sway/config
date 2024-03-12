@@ -254,6 +254,11 @@ input type:touchpad {
     for_window [app_id="amdgpu_top_scratchpad"] move scratchpad
     bindsym $mod+Shift+p exec swaymsg [app_id="amdgpu_top_scratchpad"] scratchpad show || $(exec $term --app-id=amdgpu_top_scratchpad -e amdgpu_top & sleep 0.1 && swaymsg [app_id="amdgpu_top_scratchpad"] scratchpad show)
 
+
+    # nload scratchpad
+    for_window [app_id="nload_scratchpad"] move scratchpad
+    bindsym $mod+n exec swaymsg [app_id="nload_scratchpad"] scratchpad show || $(exec $term --app-id=nload_scratchpad -e nload & sleep 0.1 && swaymsg [app_id="nload_scratchpad"] scratchpad show)
+
     # bitwarden scratchpad
     for_window [instance="bitwarden"] move scratchpad
     bindsym $mod+u exec swaymsg [instance="bitwarden"] scratchpad show || exec bitwarden-desktop
