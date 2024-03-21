@@ -45,7 +45,7 @@ case $DISTRIBUTION in
 
         # Install pip packages
         sudo apt-get install python3-pip -y
-        pip3 install pyright
+        pip3 install pyright pynvim
         ;;
     arch)
         echo "Detected Arch Linux. Installing packages using pacman."
@@ -63,7 +63,8 @@ case $DISTRIBUTION in
             clang \
             pyright \
             less \
-            tree
+            tree \
+            python-pynvim
             #zplug  # On AUR, setup yay first
         ;;
     *)
