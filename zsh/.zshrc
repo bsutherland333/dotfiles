@@ -78,8 +78,8 @@ source $DOTFILES/zsh/external/bd.zsh
 ## fzf (Fuzzy Finder) ##
 
 if [ $(command -v "fzf") ]; then
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/fzf/key-bindings.zsh
+    source $FZF_SCRIPTS/completion.zsh
+    source $FZF_SCRIPTS/key-bindings.zsh
 fi
 
 

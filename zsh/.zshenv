@@ -45,9 +45,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 case $DISTRIBUTION in
     ubuntu)
         export ZPLUG_ROOT="/usr/share/zplug"
+        export FZF_SCRIPTS="/usr/share/docs/fzf/examples"
         ;;
     arch)
         export ZPLUG_ROOT="/usr/share/zsh/scripts/zplug"
+        export FZF_SCRIPTS="/usr/share/fzf"
         ;;
 esac
 
