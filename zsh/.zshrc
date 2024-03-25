@@ -77,10 +77,9 @@ source $DOTFILES/zsh/external/bd.zsh
 
 ## fzf (Fuzzy Finder) ##
 
-if [ $(command -v "fzf") ]; then
-    source $FZF_SCRIPTS/completion.zsh
-    source $FZF_SCRIPTS/key-bindings.zsh
-fi
+# This is called by the zsh-vi-mode plugin to avoid conflicts
+# Normally you would just call 'eval "$(fzf --zsh)"'
+zvm_after_init_commands+=('eval "$(fzf --zsh)"')
 
 
 ## Syntax Highlighting ##
