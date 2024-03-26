@@ -54,3 +54,8 @@ esac
 # Specify drivers for video hardware acceleration
 export VDPAU_DRIVER=radeonsi
 export LIBVA_DRIVER_NAME=radeonsi
+
+# Specify desktop environment
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+
